@@ -1,0 +1,206 @@
+/*
+  Variables
+*/
+
+$blue: #0021A5;
+$orange: #FF4A00;
+
+/*
+  Utilities
+*/
+
+.clearfix {
+  overflow: auto;
+}
+
+/*
+  Header
+*/
+
+// Smaller menu when on small screen
+// All padding and margin are in em, so they will scale as well
+@media (min-width : 900px) {
+  .menu {
+    font-size: 1.1em;
+    text-align: right;
+    float: right;
+
+    #logo{
+      font-size: 1.25em;
+      float: left;
+    }
+
+    li.active{
+      border-bottom: 3px solid $orange !important;
+    }
+    li:hover{
+      border-bottom: 1px solid $orange;
+    }
+  }
+}
+
+.menu {
+  padding: 0.5em;
+  min-height: 2em;
+  color: #000;
+
+  #logo {
+    display: inline-block;
+    padding: .45em 1.1em;
+    margin: 0 .3em;
+    color: #000;
+
+    text-decoration: none;
+  }
+
+  ul {
+    transition: max-height .25s linear;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    // visibility transition is on li because multiple transition selectors is not well supported
+    transition: visibility .25s linear;
+    display: inline-block;
+    margin: 0 .3em;
+
+    a{
+      color: #000;
+      text-decoration: none;
+      display: block;
+      padding: .45em 1.1em;
+    }
+  }
+}
+
+@media (max-width : 900px) {
+  .menu {
+    border-bottom: 1px solid $orange;
+    padding: 0;
+
+    #logo{
+      margin: 0;
+      padding: 1em 1.2em;
+
+      font-weight: bold;
+    }
+
+    ul {
+      max-height: 0;
+      overflow: hidden;
+      margin: 0 0 0 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      visibility: hidden;
+      display: block;
+      padding: 0.2em 0.6em;
+      border: none;
+      margin: 0;
+
+      border-top: 1px solid #ddd;
+    }
+
+    .navbar-handle {
+      display: block;
+    }
+  }
+
+  #navbar-checkbox:checked + .menu {
+    ul {
+      max-height: 300px; // Set this to the maximum height your menu will ever have.
+    }
+
+    li {
+      visibility: visible;
+    }
+    .navbar-handle {
+      &, &:after, &:before {
+        border-color: #aaa;
+      }
+    }
+  }
+}
+
+.navbar-checkbox {
+  display: none;
+}
+
+// Will scale based on font-size
+// Appears as 3 parallel horizontal bars
+.navbar-handle {
+  $height: 45px; // just a reference to compute em values on the fly
+  display: none;
+  cursor: pointer;
+  position: relative;
+  font-size: $height;
+  padding: .5em 0;
+  height: 0;
+  width: 1em * 75px / $height;
+  border-top: (1em * 6px / $height) solid;
+
+  margin: 0.25em 0.25em;
+
+  &:before, &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: ' ';
+    border-top: (1em * 6px / $height) solid;
+  }
+
+  &:before {
+    top: 1em * 17px / $height;
+  }
+
+  &:after {
+    top: 1em * 40px / $height;
+  }
+}
+
+
+
+///////////
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 100;
+
+  .navbar-handle {
+    position: absolute;
+    font-size: 1.2em;
+    top: 0.7em;
+    right: 12px;
+    z-index: 10;
+  }
+}
+
+/*
+  Content
+*/
+
+#content{
+  padding: 4em 0 0 0;
+}
+
+#main-banner{
+  text-align: center;
+
+  img{
+    width: 200px;
+    height: auto;
+    border-radius: 500px;
+    margin-bottom: 2em;
+  }
+}
+
+#github-feed{
+  margin: 2.5em 0;
+  padding: 4em 0 0 0;
+}
