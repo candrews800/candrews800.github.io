@@ -7,6 +7,9 @@
 .clearfix {
   overflow: auto; }
 
+body {
+  padding-bottom: 150px; }
+
 /*
   Header
 */
@@ -129,7 +132,18 @@
     margin-bottom: 2em; }
 
 #github-feed {
-  margin: 2.5em 0;
+  margin: 1em 0;
   padding: 4em 0 0 0; }
+
+/*
+  Projects Page
+*/
+/*
+  Resume Page
+*/
+.experience-item p, .experience-item li {
+  margin-bottom: 0.5em; }
+.experience-item li {
+  list-style-type: disc; }
 
 /*# sourceMappingURL=main.css.map */

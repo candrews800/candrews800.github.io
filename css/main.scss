@@ -13,6 +13,10 @@ $orange: #FF4A00;
   overflow: auto;
 }
 
+body{
+  padding-bottom: 150px;
+}
+
 /*
   Header
 */
@@ -201,6 +205,31 @@ $orange: #FF4A00;
 }
 
 #github-feed{
-  margin: 2.5em 0;
+  margin: 1em 0;
   padding: 4em 0 0 0;
+}
+
+
+/*
+  Projects Page
+*/
+
+#project-list{
+  .project{
+
+  }
+}
+
+
+/*
+  Resume Page
+*/
+
+.experience-item{
+  p, li{
+    margin-bottom: 0.5em;
+  }
+  li{
+    list-style-type: disc;
+  }
 }

@@ -20,14 +20,14 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<header class="clearfix">
+<header>
     <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
     <nav class="menu">
         <a href="#" id="logo">Clinton Andrews</a>
         <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Resume</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
@@ -40,19 +40,15 @@
     <div id="main-banner">
         <img src="img/avatar.jpg" />
         <h1>Hello.</h1>
-        <p>Welcome to my website. I am a web developer interested in both front-end and back-end technology. My experience is primarily using <a href="http://php.net/">PHP</a> and the framework <a href="http://laravel.com/">Laravel</a>. I've also worked with <a href="https://wordpress.com/">Wordpress</a> and created my own <a href="https://packagist.org/packages/candrews/zipcode">Composer project</a> that integrates with an <a href="http://zzipcode.com/">API I built</a>. Feel free to browse my <a href="https://github.com/candrews800">Github profile</a> or check out my <a href="#">projects</a> to see what else I'm up to.</p>
+        <p>Welcome to my website. I am a web developer interested in both front-end and back-end technology. My experience is primarily using <a href="http://php.net/">PHP</a> and the framework <a href="http://laravel.com/">Laravel</a>. I've also worked with <a href="https://wordpress.org/">WordPress</a> and created my own <a href="https://packagist.org/packages/candrews/zipcode">Composer project</a> that integrates with an <a href="http://zzipcode.com/">API I built</a>. Feel free to browse my <a href="https://github.com/candrews800">Github profile</a> or check out my <a href="projects.html">projects</a> to see what else I'm up to.</p>
     </div>
 </section>
 
 <div class="container">
     <section id="github-feed">
-        <h5>Recent Activity</h5>
+        <h5>Recent Activity <a href="http://github.com/candrews800" class="button u-pull-right">Github Profile</a></h5>
         <hr />
         <ul>
-            <li>Pushed commit "readme update" to <a href="#">Zipcode API</a> on Jun 13, 2011</li>
-            <li>Pushed commit "readme update" to <a href="#">Zipcode API</a> on Jun 13, 2011</li>
-            <li>Pushed commit "readme update" to <a href="#">Zipcode API</a> on Jun 13, 2011</li>
-            <li>Pushed commit "readme update" to <a href="#">Zipcode API</a> on Jun 13, 2011</li>
         </ul>
     </section>
 </div>
@@ -61,6 +57,7 @@
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
 
 <script>
     $(function(){
@@ -69,7 +66,7 @@
             $.each( data, function( key, val ) {
                 console.log(val);
                 var text = parseEvent(val);
-                if(text){
+                if(text && items.length < 8){
                     items.push( "<li id='" + key + "'>" + text + "</li>" );
                 }
             });
@@ -83,9 +80,11 @@
 
         switch(data['type']){
             case 'PushEvent':
-                text+= 'Pushed commit "';
-                text+= data['type']['payload']['commits'][0]['message'];
-                text+= '" ';
+                text+= 'Pushed "';
+                text+= data['payload']['commits'][0]['message'];
+                text+= '" to <a href="http://github.com/'+ data['repo']['name'] +'">' + data['repo']['name'] + '</a> ';
+                var date = moment(data['created_at']);
+                text+= '- <small>' + date.fromNow() + '</small>';
                 return text;
                 break;
             default:

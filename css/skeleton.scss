@@ -29,7 +29,8 @@
   Variables
 */
 
-$blue: #0021A5;
+$blue: #4268ff;
+$dark-blue: #0021A5;
 $orange: #FF4A00;
 
 
@@ -37,7 +38,7 @@ $orange: #FF4A00;
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -51,14 +52,14 @@ $orange: #FF4A00;
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
-    padding: 0; }
+    width: 90%;
+    padding: 0px; }
 }
 
-/* For devices larger than 550px */
-@media (min-width: 550px) {
+/* For devices larger than 900px */
+@media (min-width: 900px) {
   .container {
-    width: 80%; }
+    width: 90%; }
   .column,
   .columns {
     margin-left: 4%; }
@@ -213,8 +214,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  background-color: $blue;
+  border-color: $blue; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -226,8 +227,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  background-color: $dark-blue;
+  border-color: $dark-blue; }
 
 
 /* Forms
@@ -273,7 +274,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid $orange;
   outline: 0; }
 label,
 legend {
