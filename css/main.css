@@ -146,4 +146,10 @@ body {
 .experience-item li {
   list-style-type: disc; }
 
+/*
+  Contact Page
+*/
+#contact {
+  text-align: center; }
+
 /*# sourceMappingURL=main.css.map */
