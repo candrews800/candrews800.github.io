@@ -48,7 +48,7 @@
     width: 90%;
     padding: 0px; } }
 /* For devices larger than 900px */
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .container {
     width: 90%; }
 
