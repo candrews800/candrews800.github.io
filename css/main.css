@@ -17,7 +17,7 @@ footer {
   color: #666;
   font-size: 0.9em; }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .menu {
     font-size: 1em;
     text-align: right;
@@ -59,7 +59,7 @@ footer {
       .menu li:last-child a {
         margin-right: -.5em; }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .menu {
     border-bottom: 1px solid #FF4A00;
     padding: 0; }

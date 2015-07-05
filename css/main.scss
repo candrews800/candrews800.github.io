@@ -28,7 +28,7 @@ footer{
 
 // Smaller menu when on small screen
 // All padding and margin are in em, so they will scale as well
-@media (min-width : 900px) {
+@media (min-width : 700px) {
   .menu {
     font-size: 1em;
     text-align: right;
@@ -93,7 +93,7 @@ footer{
   }
 }
 
-@media (max-width : 900px) {
+@media (max-width : 700px) {
   .menu {
     border-bottom: 1px solid $orange;
     padding: 0;
