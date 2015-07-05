@@ -27,11 +27,10 @@
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
-        <a href="#" id="logo">Clinton Andrews</a>
+        <a href="{{ site.baseurl }}/" id="logo">Clinton Andrews</a>
         <ul>
-            <li{% if page.url == '/index.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
+            <li{% if page.url == '/index.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/">Home</a></li>
             <li{% if page.url == '/projects.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/projects.html">Projects</a></li>
-            <li{% if page.url == '/resume.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/resume.html">Resume</a></li>
             <li{% if page.url == '/blog.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/blog.html">Blog</a></li>
             <li{% if page.url == '/contact.html' %} class="active" {% endif %}><a href="{{ site.baseurl }}/contact.html">Contact</a></li>
         </ul>

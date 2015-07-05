@@ -7,15 +7,19 @@
 .clearfix {
   overflow: auto; }
 
-body {
-  padding-bottom: 150px; }
-
 /*
   Header
 */
+/*
+  Footer
+*/
+footer {
+  color: #666;
+  font-size: 0.9em; }
+
 @media (min-width: 900px) {
   .menu {
-    font-size: 1.1em;
+    font-size: 1em;
     text-align: right;
     float: right; }
     .menu #logo {
@@ -32,8 +36,9 @@ body {
   .menu #logo {
     display: inline-block;
     padding: .45em 0em;
-    margin: 0 .3em;
+    margin: 0 0;
     color: #000;
+    line-height: 1em;
     text-decoration: none; }
   .menu ul {
     transition: max-height .25s linear;
@@ -47,7 +52,12 @@ body {
       color: #000;
       text-decoration: none;
       display: block;
-      padding: .45em 1.1em; }
+      padding: .45em 0.5em 0.5em 0.5em;
+      line-height: 1.5em; }
+    .menu li:last-child {
+      margin-right: 0; }
+      .menu li:last-child a {
+        margin-right: -.5em; }
 
 @media (max-width: 900px) {
   .menu {
@@ -93,7 +103,7 @@ body {
   height: 0;
   width: 1.66667em;
   border-top: 0.13333em solid;
-  margin: 0.25em 0.25em; }
+  margin: 0 0.5em; }
   .navbar-handle:before, .navbar-handle:after {
     position: absolute;
     left: 0;
@@ -143,7 +153,7 @@ body {
 .github-feed-header {
   width: 100%; }
 
-@media (max-width: 900px) {
+@media (max-width: 450px) {
   .github-feed-header h5 {
     float: none; }
   .github-feed-header .github-link {

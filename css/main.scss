@@ -13,19 +13,24 @@ $orange: #FF4A00;
   overflow: auto;
 }
 
-body{
-  padding-bottom: 150px;
-}
-
 /*
   Header
 */
+
+/*
+  Footer
+*/
+
+footer{
+  color: #666;
+  font-size: 0.9em;
+}
 
 // Smaller menu when on small screen
 // All padding and margin are in em, so they will scale as well
 @media (min-width : 900px) {
   .menu {
-    font-size: 1.1em;
+    font-size: 1em;
     text-align: right;
     float: right;
 
@@ -51,8 +56,9 @@ body{
   #logo {
     display: inline-block;
     padding: .45em 0em;
-    margin: 0 .3em;
+    margin: 0 0;
     color: #000;
+    line-height: 1em;
 
     text-decoration: none;
   }
@@ -62,6 +68,7 @@ body{
     margin: 0;
     padding: 0;
   }
+
   li {
     // visibility transition is on li because multiple transition selectors is not well supported
     transition: visibility .25s linear;
@@ -72,7 +79,16 @@ body{
       color: #000;
       text-decoration: none;
       display: block;
-      padding: .45em 1.1em;
+      padding: .45em 0.5em 0.5em 0.5em;
+      line-height: 1.5em;
+
+    }
+
+    &:last-child{
+      margin-right: 0;
+      a{
+        margin-right: -.5em;
+      }
     }
   }
 }
@@ -149,7 +165,7 @@ body{
   width: 1em * 75px / $height;
   border-top: (1em * 6px / $height) solid;
 
-  margin: 0.25em 0.25em;
+  margin: 0 0.5em;
 
   &:before, &:after {
     position: absolute;
@@ -221,7 +237,7 @@ body{
   width: 100%;
 }
 
-@media(max-width: 900px){
+@media(max-width: 450px){
   .github-feed-header{
     h5{
       float: none;
