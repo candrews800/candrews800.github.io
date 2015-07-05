@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Hey there. This is the second post."
 date:   2015-07-05 18:49:57
 categories: jekyll update
-excerpt: THis is a summary about what's going on in this post.
+excerpt: 'This post is going to be awesome. This awesome post is going to be awesome This post awesome is going to be awesome. This post is going to be awesome This post is going to be awesome.'
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

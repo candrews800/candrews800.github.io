@@ -44,13 +44,13 @@ body{
 }
 
 .menu {
-  padding: 0.5em;
+  padding: 0.5em 0;
   min-height: 2em;
   color: #000;
 
   #logo {
     display: inline-block;
-    padding: .45em 1.1em;
+    padding: .45em 0em;
     margin: 0 .3em;
     color: #000;
 
@@ -84,7 +84,7 @@ body{
 
     #logo{
       margin: 0;
-      padding: 1em 1.2em;
+      padding: 1em 0em;
 
       font-weight: bold;
     }
@@ -100,11 +100,15 @@ body{
     li {
       visibility: hidden;
       display: block;
-      padding: 0.2em 0.6em;
+      padding: 0.2em 0;
       border: none;
       margin: 0;
 
       border-top: 1px solid #ddd;
+
+      a{
+        padding: .3em 0em;
+      }
     }
 
     .navbar-handle {
@@ -190,7 +194,7 @@ body{
 */
 
 #content{
-  padding: 4em 0 0 0;
+  padding-top: 4em;
 }
 
 #main-banner{
@@ -207,6 +211,25 @@ body{
 #github-feed{
   margin: 1em 0;
   padding: 4em 0 0 0;
+}
+
+/*
+  Home Page
+*/
+
+.github-feed-header{
+  width: 100%;
+}
+
+@media(max-width: 900px){
+  .github-feed-header{
+    h5{
+      float: none;
+    }
+    .github-link{
+      float: left;
+    }
+  }
 }
 
 
