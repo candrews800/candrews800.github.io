@@ -24,16 +24,27 @@ module.exports = function(grunt) {
         },
 
         image_resize: {
-            options: {
-                width: 425,
-                height: 260,
-                overwrite: true
+            projects: {
+                options: {
+                    width: 425,
+                    height: 260,
+                    overwrite: true
+                },
+                files: {
+                    'img/thumbnails/': ['img/projects/*.{jpg,png}']
+                }
             },
-            your_target: {
-                src: ['img/projects/*.{jpg,png}'],
-                dest: 'img/projects/thumbnails/'
-            },
-        },
+            avatar: {
+                options: {
+                    width: 200,
+                    height: 200,
+                    overwrite: true
+                },
+                files: {
+                    'img/thumbnails/': ['img/avatar.jpg']
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
