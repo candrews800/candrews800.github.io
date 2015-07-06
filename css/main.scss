@@ -257,6 +257,15 @@ footer{
   .project{
     border-bottom: 1px solid #eee;
     margin-bottom: 2em;
+
+    .project-images{
+      width: 100%;
+      border: 1px solid #333;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
 

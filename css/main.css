@@ -164,6 +164,12 @@ footer {
 #project-list .project {
   border-bottom: 1px solid #eee;
   margin-bottom: 2em; }
+  #project-list .project .project-images {
+    width: 100%;
+    border: 1px solid #333; }
+    #project-list .project .project-images img {
+      width: 100%;
+      height: auto; }
 
 /*
   Resume Page

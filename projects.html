@@ -5,20 +5,31 @@ layout: default
 <section id="content" class="container">
     <div id="project-list">
         <h5>Active Projects</h5>
-        <article class="project row">
-            <div class="four columns">
-                <p>
-                    <a href="http://discovercooks.com/">DiscoverCooks.com</a>
-                </p>
-                <p>
-                    <em>PHP, MySQL, Laravel, JQuery</em>
-                </p>
+        <article class="project">
+            <div class="row">
+                <div class="eight offset-by-four columns">
+                    <div class="project-images">
+                        <a href="{{ site.baseurl }}/img/projects/discovercooks-1.jpg"><img src="{{ site.baseurl }}/img/projects/thumbnails/discovercooks-1.jpg" /></a>
+                        <a href="{{ site.baseurl }}/img/projects/discovercooks-2.png"><img src="{{ site.baseurl }}/img/projects/thumbnails/discovercooks-2.png" /></a>
+                        <a href="{{ site.baseurl }}/img/projects/discovercooks-3.jpg"><img src="{{ site.baseurl }}/img/projects/thumbnails/discovercooks-3.jpg" /></a>
+                    </div>
+                </div>
             </div>
-            <div class="eight columns">
-                <p>
-                    DiscoverCooks is a recipe sharing site for amateur chefs. Users are able to create, rate, save and review recipes. Users are able to earn a portion of the total revenue of the site based on their recipes and reviews they create. In addition, the site's features include a forum and blog system as well as users stats such as their account balance and how well their recipes and reviews are performing.
-                </p>
-                <p><a href="http://discovercooks.com" class="button button-primary">Visit Site</a> <a href="http://github.com/candrews800/discovercooks" class="button">View Code</a></p>
+            <div class="row">
+                <div class="four columns">
+                    <p>
+                        <a href="http://discovercooks.com/">DiscoverCooks.com</a>
+                    </p>
+                    <p>
+                        <em>PHP, MySQL, Laravel, JQuery</em>
+                    </p>
+                </div>
+                <div class="eight columns">
+                    <p>
+                        DiscoverCooks is a recipe sharing site for amateur chefs. Users are able to create, rate, save and review recipes. Users are able to earn a portion of the total revenue of the site based on their recipes and reviews they create. In addition, the site's features include a forum and blog system as well as users stats such as their account balance and how well their recipes and reviews are performing.
+                    </p>
+                    <p><a href="http://discovercooks.com" class="button button-primary">Visit Site</a> <a href="http://github.com/candrews800/discovercooks" class="button">View Code</a></p>
+                </div>
             </div>
         </article>
         <article class="project row">
@@ -53,20 +64,28 @@ layout: default
                 <p><a href="https://github.com/candrews800/zipcode" class="button">View Code</a></p>
             </div>
         </article>
-        <article class="project row">
-            <div class="four columns">
-                <p>
-                    <a href="http://ratearescue.com">RateARescue.com</a>
-                </p>
-                <p>
-                    <em>PHP, MySQL, Laravel, JQuery</em>
-                </p>
+        <article class="project">
+            <div class="eight offset-by-four columns">
+                <div class="project-images">
+                    <a href="{{ site.baseurl }}/img/projects/ratearescue-1.png"><img src="{{ site.baseurl }}/img/projects/thumbnails/ratearescue-1.png" /></a>
+                    <a href="{{ site.baseurl }}/img/projects/ratearescue-2.png"><img src="{{ site.baseurl }}/img/projects/thumbnails/ratearescue-2.png" /></a>
+                </div>
             </div>
-            <div class="eight columns">
-                <p>
-                    Rate A Rescue works with the <a href="https://www.petfinder.com/developers/api-docs">Petfinder API</a> to allow users to find nearby rescue animals and rate them in a variety of ways.
-                </p>
-                <p><a href="http://ratearescue.com" class="button button-primary">Visit Site</a> <a href="http://github.com/candrews800/ratearescue" class="button">View Code</a></p>
+            <div class="row">
+                <div class="four columns">
+                    <p>
+                        <a href="http://ratearescue.com">RateARescue.com</a>
+                    </p>
+                    <p>
+                        <em>PHP, MySQL, Laravel, JQuery</em>
+                    </p>
+                </div>
+                <div class="eight columns">
+                    <p>
+                        Rate A Rescue works with the <a href="https://www.petfinder.com/developers/api-docs">Petfinder API</a> to allow users to find nearby rescue animals and rate them in a variety of ways.
+                    </p>
+                    <p><a href="http://ratearescue.com" class="button button-primary">Visit Site</a> <a href="http://github.com/candrews800/ratearescue" class="button">View Code</a></p>
+                </div>
             </div>
         </article>
 
@@ -207,3 +226,19 @@ layout: default
         </article>
     </div>
 </section>
+
+<link rel="stylesheet" href="{{ site.baseurl }}/css/slick.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/css/slick-theme.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/vendor/slick.min.js"></script>
+
+<script>
+    $(function(){
+        $('.project-images').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2500,
+            dots: true
+        });
+    });
+</script>
