@@ -44,14 +44,29 @@ module.exports = function(grunt) {
                     'img/thumbnails/': ['img/avatar.jpg']
                 }
             }
+        },
+
+        imagemin: {
+            dynamic: {
+                options: {
+                    optimizationLevel: 7,
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'img/thumbnails/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'img/thumbnails/'
+                }]
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-image-resize');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-concat-css');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', [ 'concat_css', 'cssmin', 'image_resize']);
+    grunt.registerTask('default', [ 'concat_css', 'cssmin', 'image_resize', 'imagemin']);
 
 };
