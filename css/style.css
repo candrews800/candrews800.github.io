@@ -1102,6 +1102,8 @@ footer {
     #project-list .project .project-images img {
       width: 100%;
       height: auto; }
+  #project-list .project:last-child {
+    border-bottom: 0; }
 
 /*
   Resume Page

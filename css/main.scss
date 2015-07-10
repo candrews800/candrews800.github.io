@@ -266,6 +266,9 @@ footer{
         height: auto;
       }
     }
+    &:last-child{
+      border-bottom: 0;
+    }
   }
 }
 
