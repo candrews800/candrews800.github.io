@@ -7,13 +7,13 @@ layout: blog
 <section id="blog-posts">
     {% for post in site.posts %}
     <div class="row">
-        <div class="three columns">
+        <div class="six columns">
             <p>
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <br />
                 <em class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</em>
             </p>
         </div>
-        <div class="nine columns">
+        <div class="six columns">
             <p>
                 {{ post.excerpt }}
             </p>
