@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #c3c3c3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script src="js/Canvas.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/GameObject.js"></script>
+<script src="js/Tile.js"></script>
+<script src="js/Button.js"></script>
+<script src="js/Input.js"></script>
+<script src="js/Event.js"></script>
+<script src="js/GameState.js"></script>
+<script src="js/MinesweeperState.js"></script>
+<script src="js/StartMenuState.js"></script>
+<script src="js/GameOverState.js"></script>
+<script src="js/WinState.js"></script>
+
+<script>
+    var game = Game.getInstance();
+    game.init('canvas', 'Minesweeper', 600, 600);
+
+    window.setInterval(
+        (function(self) {
+            return function(){
+                self.loop();
+            }
+        })(game), 17
+    );
+</script>
+
+</body>
+</html>
