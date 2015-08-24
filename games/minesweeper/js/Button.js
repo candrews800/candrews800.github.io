@@ -80,4 +80,10 @@ Button.prototype.processInput = function(event) {
             this.onClick();
         }
     }
+
+    if (this.isBeingHovered(event)) {
+        if (event.type == 'touchstart') {
+            this.onClick();
+        }
+    }
 };

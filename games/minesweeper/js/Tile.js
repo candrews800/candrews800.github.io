@@ -137,6 +137,12 @@ Tile.prototype.processInput = function(event) {
                 }
             }
         }
+
+        if (this.isBeingHovered(event)) {
+            if (event.type == 'touchstart') {
+                this.clicked = true;
+            }
+        }
     }
 };
 
