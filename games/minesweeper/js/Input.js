@@ -7,10 +7,17 @@ Input.prototype.addWatchers = function(elementId) {
     var element = document.getElementById(elementId);
 
     element.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        that.registerEvent(e);
+    });
+
+    element.addEventListener('touchstart', function(e) {
+        e.preventDefault();
         that.registerEvent(e);
     });
 
     element.addEventListener('mousemove', function(e) {
+        e.preventDefault();
         that.registerHover(e);
     });
 
