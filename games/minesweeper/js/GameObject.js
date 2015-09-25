@@ -17,6 +17,8 @@ function GameObject(x, y) {
 
             x = event.touches[0].pageX - touchOffsets.offsetLeft;
             y = event.touches[0].pageY - touchOffsets.offsetTop;
+
+            alert(x);
         }
 
         var insideX = this.x < x && x <= this.x + this.w;

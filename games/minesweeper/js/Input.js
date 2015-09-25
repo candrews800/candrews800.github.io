@@ -12,7 +12,7 @@ Input.prototype.addWatchers = function(elementId) {
     });
 
     element.addEventListener('touchstart', function(e) {
-        alert(e);
+        e.preventDefault();
         that.registerEvent(e);
     });
 
