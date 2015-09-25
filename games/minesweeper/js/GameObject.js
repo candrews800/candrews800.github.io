@@ -22,6 +22,8 @@ function GameObject(x, y) {
         var insideX = this.x < x && x <= this.x + this.w;
         var insideY = this.y < y && y <= this.y + this.h;
 
+        alert('t');
+
         return insideX && insideY;
     };
 
