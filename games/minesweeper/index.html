@@ -29,6 +29,11 @@ layout: default
     var game = Game.getInstance();
     game.init('canvas', 'Minesweeper', 600, 600);
 
+    window.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        alert('You clicked me.');
+    });
+
     window.setInterval(
         (function(self) {
             return function(){
