@@ -16,20 +16,6 @@ function Tile(col, row, tileSize, offset, startPos) {
 
     this.revealed = false;
 
-    /**
-     * Check is mouse is hovering a tile
-     * @param event
-     */
-    this.isBeingHovered = function(event) {
-        var x = event.offsetX;
-        var y = event.offsetY;
-
-        var insideX = this.x < x && x <= this.x + this.w;
-        var insideY = this.y < y && y <= this.y + this.h;
-
-        return insideX && insideY;
-    };
-
     this.setType = function(type) {
         this.type = type;
     };
@@ -137,12 +123,8 @@ Tile.prototype.processInput = function(event) {
                 }
             }
         }
-
-        if (this.isBeingHovered(event)) {
-            if (event.type == 'touchstart') {
-                this.clicked = true;
-            }
-        }
+    } else if (event.constructor.name === 'TouchEvent' && this.isBeingHovered(event)) {
+        this.clicked = true;
     }
 };
 
