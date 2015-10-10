@@ -53,19 +53,19 @@ Button.prototype.render = function(ctx) {
 
 Button.prototype.processInput = function(event) {
     this.hover = false;
-    if (typeof event === 'undefined') {
+    if (typeof event === 'undefined' || !this.isBeingHovered(event)) {
         return;
     }
 
-    if (event.constructor.name === 'MouseEvent' && this.isBeingHovered(event)) {
-        if (event.type == 'mousemove') {
-            this.hover = true;
-        }
+    if (event.type == 'mousemove') {
+        this.hover = true;
+    }
 
-        if (event.type == 'mousedown') {
-            this.onClick();
-        }
-    } else if (event.constructor.name === 'TouchEvent' && this.isBeingHovered(event)) {
+    if (event.type == 'mousedown') {
+        this.onClick();
+    }
+
+    if (event.type == 'touchstart') {
         this.onClick();
     }
 };

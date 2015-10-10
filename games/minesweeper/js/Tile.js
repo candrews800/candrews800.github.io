@@ -95,35 +95,35 @@ Tile.prototype.render = function(ctx) {
 };
 
 Tile.prototype.processInput = function(event) {
-    if (typeof event === 'undefined') {
+    if (typeof event === 'undefined' || !this.isBeingHovered(event)) {
         return;
     }
 
-    if (event.constructor.name === 'MouseEvent' && this.isBeingHovered(event)) {
-        if (event.type == 'mousemove') {
-            this.hovered = true;
-        }
+    if (event.type == 'mousemove') {
+        this.hover = true;
+    }
 
-        if (event.type == 'mousedown') {
-            if (event.which == 2 || event.which == 3 && !this.revealed) {
-                // On Right Click
-                if (this.flagged) {
-                    this.flagged = false;
-                    Game.fireStateEvent('unflag');
-                } else {
-                    this.flagged = true;
-                    Game.fireStateEvent('flag');
-                }
+    if (event.type == 'mousedown') {
+        if (event.which == 2 || event.which == 3 && !this.revealed) {
+            // On Right Click
+            if (this.flagged) {
+                this.flagged = false;
+                Game.fireStateEvent('unflag');
             } else {
-                // On Normal Click
-                this.clicked = true;
-                if (this.flagged) {
-                    this.flagged = false;
-                    Game.fireStateEvent('unflag');
-                }
+                this.flagged = true;
+                Game.fireStateEvent('flag');
+            }
+        } else {
+            // On Normal Click
+            this.clicked = true;
+            if (this.flagged) {
+                this.flagged = false;
+                Game.fireStateEvent('unflag');
             }
         }
-    } else if (event.constructor.name === 'TouchEvent' && this.isBeingHovered(event)) {
+    }
+
+    if (event.type == 'touchstart') {
         this.clicked = true;
     }
 };

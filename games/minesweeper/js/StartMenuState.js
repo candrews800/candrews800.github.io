@@ -12,7 +12,12 @@ StartMenuState.prototype.init = function(canvas, canvasId, width, height) {
     this.objects = [];
 
     this.initInput();
+    this.initEvents();
     this.initUI();
+};
+
+StartMenuState.prototype.initEvents = function() {
+    this.event = new GameEvent();
 };
 
 StartMenuState.prototype.initInput = function() {

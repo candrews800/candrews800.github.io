@@ -13,6 +13,11 @@ WinState.prototype.init = function(canvas, canvasId, width, height) {
 
     this.initInput();
     this.initUI();
+    this.initEvents();
+};
+
+WinState.prototype.initEvents = function() {
+    this.event = new GameEvent();
 };
 
 WinState.prototype.initInput = function() {

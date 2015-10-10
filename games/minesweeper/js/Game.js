@@ -23,10 +23,10 @@ Game.prototype.init = function(canvasId, title, width, height) {
 
     this.initCanvas();
     this.initEvents();
-    this.initStartMenuStart();
+    this.initStartMenuState();
 };
 
-Game.prototype.initStartMenuStart = function() {
+Game.prototype.initStartMenuState = function() {
     this.currentState = new StartMenuState(this.canvas, this.canvasId, this.width, this.height);
 };
 
@@ -102,7 +102,7 @@ Game.prototype.initEvents = function() {
         }
     });
     this.event.addListener('main-menu', function() {
-        that.initStartMenuStart();
+        that.initStartMenuState();
     });
 
     this.event.addListener('win', function() {

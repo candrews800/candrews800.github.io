@@ -9,16 +9,15 @@ function GameObject(x, y) {
      */
     this.isBeingHovered = function (event) {
         var x, y;
-        if (event.constructor.name === 'MouseEvent') {
-            x = event.offsetX;
-            y = event.offsetY;
-        } else if (event.constructor.name === 'TouchEvent') {
+
+        if (event.type == 'touchstart') {
             var touchOffsets = getOffsets(event.touches[0].target);
 
             x = event.touches[0].pageX - touchOffsets.offsetLeft;
             y = event.touches[0].pageY - touchOffsets.offsetTop;
-
-            alert(x);
+        } else {
+            x = event.offsetX;
+            y = event.offsetY;
         }
 
         var insideX = this.x < x && x <= this.x + this.w;

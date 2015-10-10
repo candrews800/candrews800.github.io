@@ -13,6 +13,11 @@ GameOverState.prototype.init = function(canvas, canvasId, width, height) {
 
     this.initInput();
     this.initUI();
+    this.initEvents();
+};
+
+GameOverState.prototype.initEvents = function() {
+    this.event = new GameEvent();
 };
 
 GameOverState.prototype.initInput = function() {
