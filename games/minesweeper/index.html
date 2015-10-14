@@ -14,6 +14,7 @@ layout: default
 
 <script src="js/Canvas.js"></script>
 <script src="js/Game.js"></script>
+<script src="js/Minesweeper.js"></script>
 <script src="js/GameObject.js"></script>
 <script src="js/Tile.js"></script>
 <script src="js/Button.js"></script>
@@ -26,7 +27,7 @@ layout: default
 <script src="js/WinState.js"></script>
 
 <script>
-    var game = Game.getInstance();
+    var game = Minesweeper.getInstance();
     game.init('canvas', 'Minesweeper', 600, 600);
 
     window.setInterval(

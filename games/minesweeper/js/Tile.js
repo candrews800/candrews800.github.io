@@ -9,7 +9,7 @@ function Tile(col, row, tileSize, offset, startPos) {
     this.startX = this.x;
     this.startY = this.y;
 
-    var game = Game.getInstance();
+    var game = Minesweeper.getInstance();
     var rand = Math.floor((Math.random() * 4));
     this.x = Math.floor((Math.random() * game.width - this.w));
     this.y = Math.floor((Math.random() * game.height - this.h));
@@ -24,11 +24,11 @@ function Tile(col, row, tileSize, offset, startPos) {
 Tile.prototype.update = function() {
     if (this.clicked && ! this.revealed) {
         if (this.type == 'BOMB') {
-            Game.fireEvent('bomb-click');
+            Minesweeper.fireEvent('bomb-click');
         } else if (this.nearbyBombs == 0) {
-            Game.fireStateEvent('open-tile-click', {row: this.row, col: this.col});
+            Minesweeper.fireStateEvent('open-tile-click', {row: this.row, col: this.col});
         } else {
-            Game.fireStateEvent('tile-click', {row: this.row, col: this.col});
+            Minesweeper.fireStateEvent('tile-click', {row: this.row, col: this.col});
         }
         this.revealed = true;
     }
@@ -108,17 +108,17 @@ Tile.prototype.processInput = function(event) {
             // On Right Click
             if (this.flagged) {
                 this.flagged = false;
-                Game.fireStateEvent('unflag');
+                Minesweeper.fireStateEvent('unflag');
             } else {
                 this.flagged = true;
-                Game.fireStateEvent('flag');
+                Minesweeper.fireStateEvent('flag');
             }
         } else {
             // On Normal Click
             this.clicked = true;
             if (this.flagged) {
                 this.flagged = false;
-                Game.fireStateEvent('unflag');
+                Minesweeper.fireStateEvent('unflag');
             }
         }
     }

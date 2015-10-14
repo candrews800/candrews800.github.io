@@ -19,7 +19,7 @@ function Button(options) {
     this.font = "20px \"Courier New\", Courier, monospace";
     this.textBaseline = "middle";
     this.textAlign = "center";
-};
+}
 
 Button.prototype.update = function() {
 
