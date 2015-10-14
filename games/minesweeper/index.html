@@ -27,14 +27,16 @@ layout: default
 <script src="js/WinState.js"></script>
 
 <script>
-    var game = Minesweeper.getInstance();
-    game.init('canvas', 'Minesweeper', 600, 600);
+    (function() {
+        var game = Minesweeper.getInstance();
+        game.init('canvas', 'Minesweeper', 600, 600);
 
-    window.setInterval(
-        (function(self) {
-            return function(){
-                self.loop();
-            }
-        })(game), 17
-    );
+        window.setInterval(
+                (function(self) {
+                    return function(){
+                        self.loop();
+                    }
+                })(game), 17
+        );
+    })();
 </script>

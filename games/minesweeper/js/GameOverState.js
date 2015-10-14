@@ -1,5 +1,9 @@
 function GameOverState(canvas, canvasId, width, height) {
-    GameState.call(this);
+    GameState.call(this, canvas, canvasId, width, height);
+
+    this.setup = function() {
+        this.initUI();
+    };
 
     this.render = function() {
         this.canvas.clear();
@@ -7,18 +11,6 @@ function GameOverState(canvas, canvasId, width, height) {
 
         this.renderUI();
         this.renderObjects();
-    };
-
-    this.init = function(canvas, canvasId, width, height) {
-        this.width = width;
-        this.height = height;
-        this.canvas = canvas;
-        this.canvasId = canvasId;
-        this.objects = [];
-
-        this.initInput();
-        this.initUI();
-        this.initEvents();
     };
 
     this.initUI = function() {
@@ -66,6 +58,4 @@ function GameOverState(canvas, canvasId, width, height) {
         ctx.textAlign = "center";
         ctx.fillText("BOOM", this.width/2, this.height/3 + 50);
     };
-
-    this.init(canvas, canvasId, width, height);
 }

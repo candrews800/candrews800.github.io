@@ -1,4 +1,10 @@
 function StartMenuState(canvas, canvasId, width, height) {
+    GameState.call(this, canvas, canvasId, width, height);
+
+    this.setup = function(options) {
+        this.initUI();
+    };
+
     this.initUI = function() {
         var easyButton = new Button({
             x: this.width/4,
@@ -57,6 +63,4 @@ function StartMenuState(canvas, canvasId, width, height) {
         ctx.textAlign = "center";
         ctx.fillText("Minesweeper", this.width/2, this.height/4);
     };
-
-    GameState.call(this, canvas, canvasId, width, height);
 }

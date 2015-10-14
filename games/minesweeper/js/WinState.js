@@ -1,5 +1,5 @@
 function WinState(canvas, canvasId, width, height) {
-    GameState.call(this);
+    GameState.call(this, canvas, canvasId, width, height);
 
     this.render = function() {
         this.canvas.clear();
@@ -9,16 +9,8 @@ function WinState(canvas, canvasId, width, height) {
         this.renderObjects();
     };
 
-    this.init = function(canvas, canvasId, width, height) {
-        this.width = width;
-        this.height = height;
-        this.canvas = canvas;
-        this.canvasId = canvasId;
-        this.objects = [];
-
-        this.initInput();
+    this.setup = function() {
         this.initUI();
-        this.initEvents();
     };
 
     this.initUI = function() {
@@ -70,6 +62,4 @@ function WinState(canvas, canvasId, width, height) {
         ctx.fillText("Difficulty: " + this.prevState.difficulty, this.width/2, this.height/3 + 95);
         ctx.fillText("Time: " + this.prevState.timer, this.width/2, this.height/3 + 125);
     };
-
-    this.init(canvas, canvasId, width, height);
 }

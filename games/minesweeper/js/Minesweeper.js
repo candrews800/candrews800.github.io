@@ -66,13 +66,12 @@ function Minesweeper() {
 
     this.initStartMenuState = function() {
         this.currentState = new StartMenuState(this.canvas, this.canvasId, this.width, this.height);
+        this.currentState.setup();
     };
 
     this.initMinesweeperState = function(options) {
-        this.currentState = new MinesweeperState();
-        this.currentState.init({
-            canvas: this.canvas,
-            canvasId: this.canvasId,
+        this.currentState = new MinesweeperState(this.canvas, this.canvasId, this.width, this.height);
+        this.currentState.setup({
             col: options.col,
             row: options.row,
             padding: this.padding,
@@ -83,11 +82,13 @@ function Minesweeper() {
 
     this.initGameOverState = function(currentState) {
         this.currentState = new GameOverState(this.canvas, this.canvasId, this.width, this.height);
+        this.currentState.setup();
         this.currentState.setPrevState(currentState);
     };
 
     this.initWinState = function(currentState) {
         this.currentState = new WinState(this.canvas, this.canvasId, this.width, this.height);
+        this.currentState.setup();
         this.currentState.setPrevState(currentState);
     };
 

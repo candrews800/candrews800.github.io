@@ -1,23 +1,17 @@
-function MinesweeperState() {
-    GameState.call(this);
+function MinesweeperState(canvas, canvasId, width, height) {
+    GameState.call(this, canvas, canvasId, width, height);
 
-    this.init = function(options) {;
+    this.setup = function(options) {
 
         this.row = options.row;
         this.col = options.col;
-        this.canvas = options.canvas;
-        this.canvasId = options.canvasId;
         this.objects = [];
-
-        var gameDim = Minesweeper.getDim();
-        this.width = gameDim.width;
-        this.height = gameDim.height;
 
         this.bombCount = options.bombCount;
         this.difficulty = options.difficulty;
 
-        this.gridWidth = gameDim.width - options.padding.left - options.padding.right;
-        this.gridHeight = gameDim.height - options.padding.top - options.padding.down;
+        this.gridWidth = this.width - options.padding.left - options.padding.right;
+        this.gridHeight = this.height - options.padding.top - options.padding.down;
 
         this.timer = 0;
         this.bombsRemaining = this.bombCount;
@@ -37,7 +31,6 @@ function MinesweeperState() {
 
         this.firstClick = true;
 
-        this.initInput();
         this.initTiles();
         this.initEvents();
     };
@@ -181,4 +174,6 @@ function MinesweeperState() {
             Minesweeper.fireEvent('win');
         }
     };
+
+
 }

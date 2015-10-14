@@ -63,7 +63,6 @@ function GameState(canvas, canvasId, width, height){
 
         this.initInput();
         this.initEvents();
-        this.initUI();
     };
 
     this.init(canvas, canvasId, width, height);
