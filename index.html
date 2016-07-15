@@ -8,7 +8,12 @@ layout: default
         <h1>Hello.</h1>
         <div class="row">
             <div class="offset-by-one ten columns">
-                <p>Welcome to my website. I am a web developer interested in both front-end and back-end technology. My experience is primarily using <a href="http://php.net/">PHP</a> and the framework <a href="http://laravel.com/">Laravel</a>. I've also worked with <a href="https://wordpress.org/">WordPress</a> and created my own <a href="https://packagist.org/packages/candrews/zipcode">Composer project</a> that integrates with an <a href="http://zzipcode.com/">API I built</a>. Feel free to browse my <a href="https://github.com/candrews800">Github profile</a> or check out my <a href="projects.html">projects</a> to see what else I'm up to.</p>
+                <p>Welcome to my website. I am a full-stack developer at <a href="http://www.ignitenet.com/">IgniteNet</a>
+                    working on their Cloud Controller. I am also pursuing a Bachelor of Science in Computer Science at the
+                    University of Florida part-time, online. I am passionate about becoming a great software developer
+                    and am continuously trying to improve my skills. Feel free to view my
+                    <a href="https://github.com/candrews800">Github profile</a> or check out my
+                    <a href="projects.html">projects</a> to see what else I'm up to.</p>
             </div>
         </div>
     </div>
@@ -17,7 +22,7 @@ layout: default
 <div class="container">
     <section id="github-feed">
         <div class="u-cf github-feed-header">
-            <h5 class="u-pull-left">Recent Activity</h5>
+            <h5 class="u-pull-left">Recent Commits</h5>
             <a href="http://github.com/candrews800" class="github-link button u-pull-right"><i class="fa fa-github"></i> Github Profile</a>
         </div>
         <ul>
@@ -33,7 +38,6 @@ layout: default
         $.getJSON( "https://api.github.com/users/candrews800/events", function( data ) {
             var items = [];
             $.each( data, function( key, val ) {
-                console.log(val);
                 var text = parseEvent(val);
                 if(text && items.length < 8){
                     items.push( "<li id='" + key + "'>" + text + "</li>" );
@@ -45,20 +49,24 @@ layout: default
     });
 
     function parseEvent(data){
-        var text = '';
+        var text = '',
+            msg, more;
 
         switch(data['type']){
-            case 'PushEvent':
-                text+= 'Pushed "';
-                text+= data['payload']['commits'][0]['message'];
-                text+= '" to <a href="http://github.com/'+ data['repo']['name'] +'">' + data['repo']['name'] + '</a> ';
-                var date = moment(data['created_at']);
-                text+= '- <small>' + date.fromNow() + '</small>';
-                return text;
-                break;
-            default:
-                return '';
-                break;
+        case 'PushEvent':
+            msg = data['payload']['commits'][0]['message'];
+            more = msg.length > 40 ? '...' : '';
+            msg = msg.substr(0, 40) + more;
+            text+= '"' + msg + '"';
+            text+= '<span class="u-pull-right"><small>';
+            text+= '<a href="http://github.com/'+ data['repo']['name'] +'">' + data['repo']['name'] + '</a>';
+            var date = moment(data['created_at']);
+            text+= ' - ' + date.fromNow() + '</small></span>';
+            return text;
+            break;
+        default:
+            return '';
+            break;
         }
     }
 </script>
