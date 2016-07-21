@@ -1,12 +1,8 @@
 ---
-layout: musings
-title:  "First Post"
-date:   2016-07-14 10:02:00
-categories: jekyll update
-excerpt: 'This post is going to be awesome. This awesome post is going to be awesome This post awesome is going to be awesome. This post is going to be awesome This post is going to be awesome.'
+layout: post
 ---
 
-#First Post
+#### First Post
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

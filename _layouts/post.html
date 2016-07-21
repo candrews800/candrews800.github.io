@@ -1,10 +1,13 @@
 ---
-layout: blog
+layout: default
 ---
 
-<article>
-    <h3 class="post-title">{{ page.title }}</h3>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+<section id="content" class="container">
+    <div class="row">
+        <div class="twelve columns">
 
-    {{ content }}
-</article>
+            {{ content }}
+
+        </div>
+    </div>
+</section>
