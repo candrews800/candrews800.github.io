@@ -253,12 +253,12 @@ footer{
   Projects Page
 */
 
-#project-list{
-  .project{
+.article-list{
+  article{
     border-bottom: 1px solid #eee;
     margin-bottom: 2em;
 
-    .project-images{
+    .article-images{
       width: 100%;
       border: 1px solid #333;
       img{
