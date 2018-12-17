@@ -9,11 +9,13 @@ layout: default
         <div class="row">
             <div class="offset-by-one ten columns">
                 <p>Welcome to my website. I am a full-stack developer at <a href="http://www.ignitenet.com/">IgniteNet</a>
-                    working on their Cloud Controller. I have a Bachelor of Science in Computer Science from the
-                    University of Florida. I'm passionate about becoming a great software developer
-                    and am continuously trying to improve my skills. Feel free to view my
-                    <a href="https://github.com/candrews800">Github profile</a> or check out some of my
-                    <a href="/projects">projects</a> to see what else I'm up to.</p>
+                    working on their <a href="https://www.ignitenet.com/cloud/">IgniteNet Cloud</a>.
+                    I have a Bachelor of Science in Computer Science from the
+                    University of Florida. I'm passionate about software developent
+                    and try to continuously improve my skills. Feel free to view my
+                    <a href="https://github.com/candrews800">Github profile</a>, check out some of my
+                    <a href="/projects">projects</a>, or contact me at
+                    <a href="mailto:candrews800@gmail.com">candrews800@gmail.com</a>.</p>
             </div>
         </div>
     </div>
@@ -34,6 +36,8 @@ layout: default
 <script src="js/vendor/moment.min.js"></script>
 
 <script>
+    "use strict";
+
     $(function(){
         $.getJSON( "https://api.github.com/users/candrews800/events", function( data ) {
             var items = [];
@@ -49,24 +53,19 @@ layout: default
     });
 
     function parseEvent(data){
-        var text = '',
-            msg, more;
+        var text = '';
 
         switch(data['type']){
         case 'PushEvent':
-            msg = data['payload']['commits'][0]['message'];
-            more = msg.length > 40 ? '...' : '';
-            msg = msg.substr(0, 40) + more;
-            text+= '"' + msg + '"';
-            text+= '<span class="u-pull-right"><small>';
-            text+= '<a href="http://github.com/'+ data['repo']['name'] +'">' + data['repo']['name'] + '</a>';
-            var date = moment(data['created_at']);
-            text+= ' - ' + date.fromNow() + '</small></span>';
+            text+= "<small>";
+            text+= '<a href="http://github.com/'+ data['repo']['name'] + '">' + data['repo']['name'] + '</a>';
+            text+= ' - ' + moment(data['created_at']).fromNow();
+            text+= ' - ' + data['payload']['commits'][0]['message'];
+            text+= "</small>";
+
             return text;
-            break;
         default:
             return '';
-            break;
         }
     }
 </script>
